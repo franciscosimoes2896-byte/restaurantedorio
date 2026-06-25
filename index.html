@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante do Rio · Moita</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #faf7f4;
+            color: #2c2420;
+            line-height: 1.5;
+        }
+
+        /* HEADER */
+        header {
+            background: #fff;
+            padding: 14px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+        }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+            display: block;
+        }
+
+        nav a {
+            color: #5a4a42;
+            text-decoration: none;
+            margin-left: 28px;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            transition: 0.2s;
+            border-bottom: 1.5px solid transparent;
+            padding-bottom: 4px;
+        }
+        nav a:hover {
+            color: #c0392b;
+            border-bottom-color: #c0392b;
+        }
+        nav a.ativo {
+            color: #c0392b;
+            border-bottom-color: #c0392b;
+        }
+
+        /* HERO com Banner */
+        .hero {
+            position: relative;
+            height: 75vh;
+            min-height: 480px;
+            background: url('https://i.ibb.co/9mdRRNPY/Whats-App-Image-2026-06-21-at-22-14-00.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.50);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            line-height: 1.15;
+        }
+
+        .hero-content h1 i {
+            color: #ffe066;
+            margin: 0 6px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 28px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-hero {
+            display: inline-block;
+            background: #c0392b;
+            color: #fff;
+            padding: 12px 40px;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.25s;
+            letter-spacing: 0.3px;
+            border: 1px solid transparent;
+        }
+        .btn-hero:hover {
+            background: #a93226;
+            transform: scale(1.02);
+        }
+
+        .btn-hero-outline {
+            background: transparent;
+            border-color: #fff;
+            margin-left: 12px;
+        }
+        .btn-hero-outline:hover {
+            background: rgba(255,255,255,0.12);
+            border-color: #fff;
+        }
+
+        /* SEÇÕES */
+        section {
+            padding: 60px 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 8px;
+            color: #2c2420;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #8a7a72;
+            font-weight: 300;
+            font-size: 15px;
+            margin-bottom: 35px;
+        }
+
+        /* SERVIÇOS */
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .servico-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 28px 20px;
+            text-align: center;
+            transition: 0.2s;
+        }
+        .servico-card:hover {
+            border-color: #c0392b;
+            transform: translateY(-4px);
+        }
+        .servico-card i {
+            font-size: 28px;
+            color: #c0392b;
+            margin-bottom: 12px;
+        }
+        .servico-card h3 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #2c2420;
+        }
+        .servico-card p {
+            font-size: 13px;
+            color: #8a7a72;
+            font-weight: 300;
+            margin-top: 4px;
+        }
+
+        /* SALAS - informação discreta */
+        .salas-info {
+            text-align: center;
+            margin: -20px auto 40px;
+            padding: 10px 20px;
+            max-width: 500px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 30px;
+            font-size: 13px;
+            color: #5a4a42;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        .salas-info i {
+            color: #c0392b;
+            margin: 0 6px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .salas-info span {
+            font-weight: 500;
+            color: #2c2420;
+        }
+
+        /* GALERIA */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .galeria-item {
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            background: #fff;
+            transition: 0.25s;
+            aspect-ratio: 1 / 1;
+        }
+
+        .galeria-item:hover {
+            transform: scale(1.02);
+            border-color: #c0392b;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.04);
+        }
+
+        /* RESERVAS */
+        .reserva {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px 35px;
+            border: 1px solid #eee;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            font-weight: 400;
+            color: #5a4a42;
+            letter-spacing: 0.3px;
+        }
+        .form-group label i {
+            color: #c0392b;
+            margin-right: 4px;
+            font-size: 12px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            background: #faf7f4;
+            transition: 0.2s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #c0392b;
+            outline: none;
+            background: #fff;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 70px;
+        }
+
+        .form-full {
+            grid-column: 1 / -1;
+        }
+
+        .btn-enviar {
+            grid-column: 1 / -1;
+            background: #c0392b;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-enviar:hover {
+            background: #a93226;
+        }
+
+        /* DEPOIMENTOS */
+        .depo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .depo-item {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 22px 20px;
+            text-align: center;
+        }
+        .depo-item i {
+            color: #c0392b;
+            font-size: 20px;
+            opacity: 0.5;
+            margin-bottom: 8px;
+        }
+        .depo-item p {
+            font-size: 14px;
+            font-weight: 300;
+            color: #2c2420;
+            font-style: italic;
+        }
+        .depo-item span {
+            display: block;
+            margin-top: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #c0392b;
+        }
+
+        /* CONTATO / INFO */
+        .info-contato {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 30px 25px;
+            margin-top: 10px;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+        .info-item i {
+            font-size: 22px;
+            color: #c0392b;
+            margin-bottom: 6px;
+        }
+        .info-item h4 {
+            font-size: 14px;
+            font-weight: 500;
+            color: #2c2420;
+        }
+        .info-item p {
+            font-size: 14px;
+            color: #5a4a42;
+            font-weight: 300;
+        }
+        .info-item a {
+            color: #5a4a42;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .info-item a:hover {
+            color: #c0392b;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #fff;
+            border-top: 1px solid #eee;
+            color: #8a7a72;
+            padding: 30px 5% 20px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+        .footer-social a {
+            color: #5a4a42;
+            margin: 0 12px;
+            font-size: 20px;
+            transition: 0.2s;
+        }
+        .footer-social a:hover {
+            color: #c0392b;
+        }
+
+        footer .footer-brand {
+            color: #c0392b;
+            font-weight: 500;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 12px 5%;
+            }
+            nav a {
+                margin: 0 12px;
+                font-size: 13px;
+            }
+
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
+            .hero-content h1 {
+                font-size: 34px;
+            }
+            .hero-content p {
+                font-size: 15px;
+            }
+
+            .btn-hero {
+                padding: 10px 28px;
+                font-size: 14px;
+            }
+            .btn-hero-outline {
+                margin-left: 8px;
+            }
+
+            section {
+                padding: 40px 5%;
+            }
+            .section-title {
+                font-size: 24px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .servicos-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .galeria-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .info-contato {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .salas-info {
+                font-size: 12px;
+                padding: 8px 16px;
+                margin: -10px auto 30px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .servicos-grid {
+                grid-template-columns: 1fr;
+            }
+            .galeria-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-content h1 {
+                font-size: 28px;
+            }
+            .info-contato {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <a href="index.html" class="logo">
+        <img src="https://i.ibb.co/4Z35xYCV/qvuxo-1782157061078-removebg-preview.png" alt="Restaurante do Rio" />
+    </a>
+    <nav>
+        <a href="index.html" class="ativo">Início</a>
+        <a href="menu.html">Menu</a>
+        <a href="#reserva">Reservas</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<!-- HERO com Banner -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>
+            <i class="fas fa-utensils"></i> Restaurante do Rio
+        </h1>
+        <p>Gastronomia de excelência para celebrar a vida · Eventos até 60 pessoas</p>
+        <div>
+            <a href="#reserva" class="btn-hero"><i class="fas fa-calendar-check"></i> Fazer Reserva</a>
+            <a href="menu.html" class="btn-hero btn-hero-outline"><i class="fas fa-utensils"></i> Ver Menu</a>
+        </div>
+    </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+    <h2 class="section-title"><i class="fas fa-images"></i> Galeria</h2>
+    <p class="section-subtitle">Conheça nossos pratos e ambiente</p>
+
+    <!-- Informação discreta sobre as salas -->
+    <div class="salas-info">
+        <i class="fas fa-door-open"></i>
+        <span>2 salas</span> · até <span>24</span> pessoas
+        <i class="fas fa-circle" style="font-size:4px; vertical-align:middle; opacity:0.3; margin:0 8px;"></i>
+        até <span>60</span> pessoas
+        <i class="fas fa-people-arrows" style="margin-left:6px;"></i>
+    </div>
+
+    <div class="galeria-grid">
+        <!-- Imagem do Banner (principal) -->
+        <div class="galeria-item">
+            <img src="https://i.ibb.co/9mdRRNPY/Whats-App-Image-2026-06-21-at-22-14-00.jpg" alt="Ambiente do Restaurante do Rio" loading="lazy" />
+        </div>
+        <div class="galeria-item">
+            <img src="https://i.ibb.co/GQnD0nzp/Whats-App-Image-2026-06-21-at-22-05-01.jpg" alt="Prato do Restaurante do Rio" loading="lazy" />
+        </div>
+        <div class="galeria-item">
+            <img src="https://i.ibb.co/NgVtNHGr/Whats-App-Image-2026-06-21-at-22-05-58.jpg" alt="Prato do Restaurante do Rio" loading="lazy" />
+        </div>
+        <div class="galeria-item">
+            <img src="https://i.ibb.co/0RWMMCN3/Whats-App-Image-2026-06-21-at-22-07-54.jpg" alt="Ambiente do Restaurante do Rio" loading="lazy" />
+        </div>
+        <div class="galeria-item">
+            <img src="https://i.ibb.co/mCN34MdL/Whats-App-Image-2026-06-19-at-01-24-47.jpg" alt="Prato do Restaurante do Rio" loading="lazy" />
+        </div>
+        <div class="galeria-item">
+            <img src="https://i.ibb.co/sptC2jkc/Whats-App-Image-2026-06-18-at-23-35-49.jpg" alt="Prato do Restaurante do Rio" loading="lazy" />
+        </div>
+    </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section>
+    <h2 class="section-title">Nossos Serviços</h2>
+    <p class="section-subtitle">Tudo para tornar sua celebração inesquecível</p>
+
+    <div class="servicos-grid">
+        <div class="servico-card">
+            <i class="fas fa-birthday-cake"></i>
+            <h3>Aniversários</h3>
+            <p>Decoração temática, bolo personalizado e menu exclusivo</p>
+        </div>
+        <div class="servico-card">
+            <i class="fas fa-glass-cheers"></i>
+            <h3>Festas & Eventos</h3>
+            <p>Buffet completo, open bar e espaço para dança e música</p>
+        </div>
+        <div class="servico-card">
+            <i class="fas fa-users"></i>
+            <h3>Grupos até 60</h3>
+            <p>Ambiente acolhedor com capacidade para 60 convidados</p>
+        </div>
+        <div class="servico-card">
+            <i class="fas fa-trophy"></i>
+            <h3>Eventos Corporativos</h3>
+            <p>Confraternizações, premiações e coquetéis de alto padrão</p>
+        </div>
+    </div>
+</section>
+
+<!-- RESERVAS -->
+<section id="reserva">
+    <h2 class="section-title"><i class="fas fa-pencil-alt"></i> Faça sua Reserva</h2>
+    <p class="section-subtitle">Preencha os dados e entraremos em contato</p>
+
+    <div class="reserva">
+        <form id="formReserva">
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Nome completo</label>
+                    <input type="text" id="nome" placeholder="Seu nome" required />
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-envelope"></i> E-mail</label>
+                    <input type="email" id="email" placeholder="voce@email.com" required />
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-phone"></i> Telefone</label>
+                    <input type="tel" id="telefone" placeholder="935 525 388" required />
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-calendar-day"></i> Data do evento</label>
+                    <input type="date" id="data" required />
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-clock"></i> Horário</label>
+                    <input type="time" id="horario" required />
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-users"></i> Nº de pessoas</label>
+                    <select id="pessoas" required>
+                        <option value="">Selecione...</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="24">24 (sala pequena)</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                        <option value="60" selected>60 (sala grande)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group form-full">
+                    <label><i class="fas fa-comment"></i> Observações</label>
+                    <textarea id="obs" placeholder="Algum pedido especial, decoração, tipo de evento..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <button type="submit" class="btn-enviar">
+                    <i class="fas fa-paper-plane"></i> Enviar Reserva
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+    <h2 class="section-title"><i class="fas fa-quote-right"></i> Depoimentos</h2>
+    <p class="section-subtitle">Quem já celebrou conosco</p>
+
+    <div class="depo-grid">
+        <div class="depo-item">
+            <i class="fas fa-quote-left"></i>
+            <p>"Fiz meu aniversário de 30 anos no Restaurante do Rio e foi impecável! Comida incrível e equipe super atenciosa."</p>
+            <span>— Mariana R.</span>
+        </div>
+        <div class="depo-item">
+            <i class="fas fa-quote-left"></i>
+            <p>"Reunimos 50 pessoas para uma confraternização da empresa. Todos elogiaram o buffet e a estrutura maravilhosa."</p>
+            <span>— Carlos M.</span>
+        </div>
+        <div class="depo-item">
+            <i class="fas fa-quote-left"></i>
+            <p>"A decoração e o bolo foram lindos. Minha filha amou a festa de 10 anos! Super recomendo o Restaurante do Rio."</p>
+            <span>— Juliana P.</span>
+        </div>
+    </div>
+</section>
+
+<!-- CONTATO / INFORMAÇÕES -->
+<section id="contato">
+    <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> Contato</h2>
+    <p class="section-subtitle">Visite-nos ou entre em contacto</p>
+
+    <div class="info-contato">
+        <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <h4>Telefone</h4>
+            <p><a href="tel:+351935525388">935 525 388</a></p>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <h4>E-mail</h4>
+            <p><a href="mailto:restaurantedorio74@gmail.com">restaurantedorio74@gmail.com</a></p>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-map-pin"></i>
+            <h4>Localização</h4>
+            <p>Avenida Capitães de Abril 36D<br />2835-022 Moita</p>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <h4>Horário</h4>
+            <p>Segunda a Domingo<br />Almoço e Jantar</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61572505390373" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/restaurantedorio" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="tel:+351935525388"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:restaurantedorio74@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p style="margin-top:12px;">© 2026 · <span class="footer-brand">Restaurante do Rio</span> · Feito com ♥</p>
+    <p style="font-size:12px; margin-top:4px;">Avenida Capitães de Abril 36D, 2835-022 Moita</p>
+</footer>
+
+<!-- SCRIPT para enviar por e-mail -->
+<script>
+    document.getElementById('formReserva').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const telefone = document.getElementById('telefone').value.trim();
+        const data = document.getElementById('data').value;
+        const horario = document.getElementById('horario').value;
+        const pessoas = document.getElementById('pessoas').value;
+        const obs = document.getElementById('obs').value.trim();
+
+        if (!nome || !email || !telefone || !data || !horario || !pessoas) {
+            alert('⚠️ Preencha todos os campos obrigatórios.');
+            return;
+        }
+
+        const assunto = encodeURIComponent(`Nova Reserva - ${nome} - Restaurante do Rio`);
+        const corpo = encodeURIComponent(
+            `Nova reserva solicitada - Restaurante do Rio\n\n` +
+            `Nome: ${nome}\n` +
+            `E-mail: ${email}\n` +
+            `Telefone: ${telefone}\n` +
+            `Data: ${data}\n` +
+            `Horário: ${horario}\n` +
+            `Nº de pessoas: ${pessoas}\n` +
+            `Observações: ${obs || 'Nenhuma'}\n\n` +
+            `---\nEnviado pelo site Restaurante do Rio`
+        );
+
+        const emailDestino = 'restaurantedorio74@gmail.com';
+
+        window.location.href = `mailto:${emailDestino}?subject=${assunto}&body=${corpo}`;
+
+        alert('✅ Sua reserva foi preparada! Seu e-mail será aberto para enviar.\n\nDepois de enviar, entraremos em contato em breve.');
+    });
+</script>
+
+</body>
+</html>
