@@ -159,7 +159,7 @@
             margin-bottom: 20px;
         }
 
-        /* TEXTO SOBRE O RESTAURANTE - NOVO */
+        /* TEXTO SOBRE O RESTAURANTE */
         .sobre-texto {
             text-align: center;
             max-width: 700px;
@@ -198,7 +198,7 @@
             color: #3d2c1e;
         }
 
-        /* CARROSSEL - IMAGEM MAIS PEQUENA */
+        /* CARROSSEL */
         .carousel-wrapper {
             max-width: 550px;
             margin: 0 auto 10px;
@@ -258,7 +258,6 @@
             right: 8px;
         }
 
-        /* PONTINHOS - FORA DA IMAGEM */
         .carousel-dots {
             display: flex;
             justify-content: center;
@@ -599,7 +598,6 @@
     <h2 class="section-title">Galeria</h2>
     <p class="section-subtitle">Sabores e momentos</p>
 
-    <!-- TEXTO SOBRE O RESTAURANTE - NOVO -->
     <div class="sobre-texto">
         <p>
             Há momentos que merecem ser celebrados à volta de uma boa mesa. Na Churrasqueira do Rio, recebemos cada evento com carinho, dedicação e o sabor da verdadeira cozinha portuguesa. Seja um aniversário, um batizado, uma comunhão, um jantar de família, um encontro entre amigos ou um evento empresarial, criamos um ambiente acolhedor onde cada refeição se transforma numa recordação especial. O aroma da brasa, os sabores tradicionais e a hospitalidade que nos caracteriza fazem de cada celebração um momento único, partilhado entre sorrisos, boa comida e pessoas especiais. Deixe-nos fazer parte da sua história. Entre em contacto connosco e descubra os nossos menus para grupos. Será um prazer celebrar consigo.
@@ -612,7 +610,6 @@
         <i class="fas fa-people-arrows" style="margin-left:4px;"></i>
     </div>
 
-    <!-- CARROSSEL -->
     <div class="carousel-wrapper">
         <div class="carousel-container" id="carousel">
             <div class="carousel-slides" id="carouselSlides">
@@ -640,7 +637,6 @@
             <button class="carousel-btn next" id="nextBtn">›</button>
         </div>
 
-        <!-- PONTINHOS FORA DA IMAGEM -->
         <div class="carousel-dots" id="carouselDots"></div>
     </div>
 </section>
@@ -651,37 +647,41 @@
     <p class="section-subtitle">Preencha e entraremos em contacto</p>
 
     <div class="reserva">
-        <form id="formReserva">
+        <form id="formReserva" action="https://formsubmit.co/t.fesenko000@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="https://seudominio.com/obrigado.html">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_template" value="table">
+
             <div class="form-row">
                 <div class="form-group">
                     <label><i class="fas fa-user"></i> Nome</label>
-                    <input type="text" id="nome" placeholder="Seu nome" required />
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
                 </div>
                 <div class="form-group">
                     <label><i class="fas fa-envelope"></i> E-mail</label>
-                    <input type="email" id="email" placeholder="voce@email.com" required />
+                    <input type="email" id="email" name="email" placeholder="voce@email.com" required />
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label><i class="fas fa-phone"></i> Telefone</label>
-                    <input type="tel" id="telefone" placeholder="935 525 388" required />
+                    <input type="tel" id="telefone" name="telefone" placeholder="935 525 388" required />
                 </div>
                 <div class="form-group">
                     <label><i class="fas fa-calendar-day"></i> Data</label>
-                    <input type="date" id="data" required />
+                    <input type="date" id="data" name="data" required />
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label><i class="fas fa-clock"></i> Horário</label>
-                    <input type="time" id="horario" required />
+                    <input type="time" id="horario" name="horario" required />
                 </div>
                 <div class="form-group">
                     <label><i class="fas fa-users"></i> Pessoas</label>
-                    <select id="pessoas" required>
+                    <select id="pessoas" name="pessoas" required>
                         <option value="">Selecione...</option>
                         <option value="10">10</option>
                         <option value="20">20</option>
@@ -697,7 +697,7 @@
             <div class="form-row">
                 <div class="form-group form-full">
                     <label><i class="fas fa-comment"></i> Observações</label>
-                    <textarea id="obs" placeholder="Algum pedido especial..."></textarea>
+                    <textarea id="obs" name="obs" placeholder="Algum pedido especial..."></textarea>
                 </div>
             </div>
 
@@ -742,7 +742,6 @@
         </div>
     </div>
 
-    <!-- WIDGET GOOGLE MAPS -->
     <div class="map-wrapper">
         <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3114.123456789!2d-8.993!3d38.654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDM5JzE0LjQiTiA4wrA1OSczNS4yIlc!5e0!3m2!1spt!2spt!4v1234567890" 
@@ -770,8 +769,8 @@
     <i class="fab fa-whatsapp"></i>
 </a>
 
+<!-- CARROSSEL SCRIPT -->
 <script>
-    // ========== CARROSSEL ==========
     const slides = document.getElementById('carouselSlides');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
@@ -780,12 +779,13 @@
     let currentIndex = 0;
     let autoPlayInterval;
 
-    // Criar dots pequenos
     for (let i = 0; i < totalSlides; i++) {
         const dot = document.createElement('button');
         dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
         dot.dataset.index = i;
-        dot.addEventListener('click', () => goToSlide(i));
+        dot.addEventListener('click', function() {
+            goToSlide(parseInt(this.dataset.index));
+        });
         dotsContainer.appendChild(dot);
     }
 
@@ -824,53 +824,17 @@
         autoPlayInterval = setInterval(nextSlide, 4000);
     }
 
-    // Eventos dos botões
     prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
 
-    // Iniciar auto-play
     autoPlayInterval = setInterval(nextSlide, 4000);
 
-    // Pausar auto-play ao passar o mouse
     const carousel = document.getElementById('carousel');
     carousel.addEventListener('mouseenter', function() {
         clearInterval(autoPlayInterval);
     });
     carousel.addEventListener('mouseleave', function() {
         autoPlayInterval = setInterval(nextSlide, 4000);
-    });
-
-    // ========== FORMULÁRIO ==========
-    document.getElementById('formReserva').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        var nome = document.getElementById('nome').value.trim();
-        var email = document.getElementById('email').value.trim();
-        var telefone = document.getElementById('telefone').value.trim();
-        var data = document.getElementById('data').value;
-        var horario = document.getElementById('horario').value;
-        var pessoas = document.getElementById('pessoas').value;
-        var obs = document.getElementById('obs').value.trim();
-
-        if (!nome || !email || !telefone || !data || !horario || !pessoas) {
-            alert('⚠️ Preencha todos os campos.');
-            return;
-        }
-
-        var assunto = encodeURIComponent('Reserva - ' + nome + ' - Restaurante do Rio');
-        var corpo = encodeURIComponent(
-            'Reserva - Restaurante do Rio\n\n' +
-            'Nome: ' + nome + '\n' +
-            'E-mail: ' + email + '\n' +
-            'Telefone: ' + telefone + '\n' +
-            'Data: ' + data + '\n' +
-            'Horário: ' + horario + '\n' +
-            'Pessoas: ' + pessoas + '\n' +
-            'Obs: ' + (obs || 'Nenhuma') + '\n'
-        );
-
-        window.location.href = 'mailto:t.fesenko000@gmail.com?subject=' + assunto + '&body=' + corpo;
-        alert('✅ Reserva preparada! Abra o e-mail para enviar.');
     });
 </script>
 
