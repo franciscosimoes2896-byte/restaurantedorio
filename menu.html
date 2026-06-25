@@ -6,7 +6,7 @@
     <title>Menu · Restaurante do Rio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
@@ -18,169 +18,156 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: #faf7f4;
-            color: #2c2420;
+            font-family: 'Nunito', sans-serif;
+            background: #fcf6f0;
+            color: #3d2c1e;
             line-height: 1.5;
         }
 
-        /* HEADER */
         header {
-            background: #fff;
-            padding: 14px 5%;
+            background: #fcf6f0;
+            padding: 12px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #e8d9cc;
             position: sticky;
             top: 0;
             z-index: 999;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(252, 246, 240, 0.92);
             backdrop-filter: blur(8px);
         }
 
         .logo img {
-            height: 48px;
+            height: 44px;
             width: auto;
             display: block;
         }
 
         nav a {
-            color: #5a4a42;
+            color: #7a5a44;
             text-decoration: none;
-            margin-left: 28px;
+            margin-left: 24px;
             font-size: 14px;
             font-weight: 400;
-            letter-spacing: 0.3px;
             transition: 0.2s;
-            border-bottom: 1.5px solid transparent;
+            border-bottom: 2px solid transparent;
             padding-bottom: 4px;
         }
         nav a:hover {
-            color: #c0392b;
-            border-bottom-color: #c0392b;
+            color: #b85a3a;
+            border-bottom-color: #b85a3a;
         }
         nav a.ativo {
-            color: #c0392b;
-            border-bottom-color: #c0392b;
+            color: #b85a3a;
+            border-bottom-color: #b85a3a;
         }
 
-        /* HERO */
         .hero-menu {
-            padding: 50px 5% 30px;
+            padding: 30px 5% 16px;
             text-align: center;
-            background: #faf7f4;
+            background: #fcf6f0;
         }
         .hero-menu h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 38px;
-            font-weight: 400;
-            color: #2c2420;
-            letter-spacing: 1px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #3d2c1e;
         }
         .hero-menu h1 i {
-            color: #c0392b;
-            margin-right: 10px;
+            color: #b85a3a;
+            margin-right: 8px;
         }
         .hero-menu p {
-            font-size: 15px;
-            color: #8a7a72;
+            font-size: 14px;
+            color: #9a7a64;
             font-weight: 300;
-            margin-top: 6px;
-            letter-spacing: 0.5px;
+            margin-top: 2px;
         }
 
         .btn-voltar {
             display: inline-block;
-            margin: 0 5% 25px;
+            margin: 0 5% 16px;
             background: transparent;
-            color: #5a4a42;
-            padding: 8px 20px;
-            border: 1px solid #ddd;
-            border-radius: 30px;
+            color: #7a5a44;
+            padding: 6px 18px;
+            border: 1px solid #e8d9cc;
+            border-radius: 50px;
             font-size: 13px;
-            font-weight: 400;
             text-decoration: none;
             transition: 0.2s;
         }
         .btn-voltar:hover {
-            border-color: #c0392b;
-            color: #c0392b;
+            border-color: #b85a3a;
+            color: #b85a3a;
         }
         .btn-voltar i {
-            margin-right: 6px;
+            margin-right: 5px;
         }
 
-        /* MENU CONTAINER */
         .menu-container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 5% 60px;
+            padding: 0 5% 40px;
         }
 
-        /* CATEGORIAS */
         .categoria {
-            margin-bottom: 40px;
+            margin-bottom: 28px;
         }
 
         .categoria h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            font-weight: 400;
-            color: #2c2420;
-            letter-spacing: 0.5px;
-            border-bottom: 1px solid #e8e0da;
-            padding-bottom: 10px;
-            margin-bottom: 18px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #3d2c1e;
+            border-bottom: 1px solid #e8d9cc;
+            padding-bottom: 6px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         .categoria h2 i {
-            font-size: 18px;
-            color: #c0392b;
-            opacity: 0.7;
+            font-size: 16px;
+            color: #b85a3a;
+            opacity: 0.6;
         }
 
         .categoria-vegetariana h2 i {
-            color: #27ae60;
+            color: #6a9e6a;
         }
         .categoria-infantil h2 i {
-            color: #d4a017;
+            color: #d4a060;
         }
 
         .grid-pratos {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 6px 20px;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 2px 16px;
         }
 
         .prato {
-            padding: 6px 0 6px 4px;
+            padding: 4px 0 4px 4px;
             display: flex;
             align-items: baseline;
-            gap: 10px;
-            border-bottom: 1px dashed #f0ebe7;
-            transition: 0.15s;
-        }
-        .prato:hover {
-            border-bottom-color: #ddd;
+            gap: 8px;
+            border-bottom: 1px dashed #f0e5dc;
         }
 
         .prato .icone {
-            font-size: 14px;
-            color: #c0392b;
-            min-width: 22px;
+            font-size: 13px;
+            color: #b85a3a;
+            min-width: 20px;
             text-align: center;
-            opacity: 0.6;
+            opacity: 0.5;
         }
 
         .prato-vegetariano .icone {
-            color: #27ae60;
+            color: #6a9e6a;
         }
         .prato-infantil .icone {
-            color: #d4a017;
+            color: #d4a060;
         }
 
         .prato .info {
@@ -188,121 +175,116 @@
             min-width: 0;
         }
         .prato .info h3 {
-            font-size: 14px;
-            font-weight: 500;
-            color: #2c2420;
-            letter-spacing: -0.1px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #3d2c1e;
         }
         .prato .info p {
-            font-size: 12.5px;
-            color: #8a7a72;
+            font-size: 12px;
+            color: #9a7a64;
             font-weight: 300;
-            margin-top: 1px;
-            line-height: 1.3;
+            line-height: 1.2;
         }
         .prato .info .destaque-tabua {
             display: inline-block;
-            background: #c0392b;
+            background: #b85a3a;
             color: #fff;
-            font-size: 9px;
+            font-size: 8px;
             font-weight: 600;
-            padding: 1px 10px;
+            padding: 1px 8px;
             border-radius: 20px;
-            margin-top: 2px;
-            letter-spacing: 0.5px;
+            margin-top: 1px;
         }
         .prato-vegetariano .info .destaque-tabua {
-            background: #27ae60;
+            background: #6a9e6a;
         }
         .prato-infantil .info .destaque-tabua {
-            background: #d4a017;
+            background: #d4a060;
         }
 
         .destaque {
-            background: #fff;
-            border: 1px solid #e8e0da;
-            border-radius: 12px;
-            padding: 22px 30px;
-            margin-bottom: 40px;
+            background: #fff7f0;
+            border: 1px solid #e8d9cc;
+            border-radius: 16px;
+            padding: 14px 20px;
+            margin-bottom: 28px;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
         }
         .destaque h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            font-weight: 400;
-            color: #2c2420;
+            font-family: 'Nunito', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #3d2c1e;
         }
         .destaque h2 i {
-            color: #c0392b;
-            margin-right: 8px;
+            color: #b85a3a;
+            margin-right: 6px;
         }
         .destaque p {
-            color: #8a7a72;
-            font-size: 14px;
+            color: #9a7a64;
+            font-size: 13px;
             font-weight: 300;
         }
         .destaque .badge {
-            background: #c0392b;
+            background: #b85a3a;
             color: #fff;
-            padding: 4px 18px;
+            padding: 3px 14px;
             border-radius: 30px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 400;
-            letter-spacing: 0.5px;
         }
 
         footer {
-            background: #fff;
-            border-top: 1px solid #eee;
-            color: #8a7a72;
-            padding: 25px 5% 20px;
+            background: #fcf6f0;
+            border-top: 1px solid #e8d9cc;
+            color: #9a7a64;
+            padding: 18px 5% 14px;
             text-align: center;
             font-size: 13px;
             font-weight: 300;
         }
         footer span {
-            color: #c0392b;
+            color: #b85a3a;
+            font-weight: 600;
+        }
+        footer a {
+            color: #9a7a64;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #b85a3a;
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                gap: 10px;
-                padding: 12px 5%;
+                gap: 8px;
+                padding: 10px 5%;
             }
             nav a {
-                margin: 0 12px;
+                margin: 0 10px;
                 font-size: 13px;
             }
             .hero-menu h1 {
-                font-size: 28px;
+                font-size: 26px;
             }
             .grid-pratos {
                 grid-template-columns: 1fr;
-                gap: 2px;
             }
             .destaque {
                 flex-direction: column;
                 text-align: center;
-                gap: 12px;
-                padding: 18px 20px;
-            }
-        }
-
-        @media (max-width: 400px) {
-            nav a {
-                margin: 0 8px;
-                font-size: 12px;
+                gap: 8px;
+                padding: 14px 16px;
             }
         }
     </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
     <a href="index.html" class="logo">
         <img src="https://i.ibb.co/4Z35xYCV/qvuxo-1782157061078-removebg-preview.png" alt="Restaurante do Rio" />
@@ -315,26 +297,20 @@
     </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero-menu">
     <h1><i class="fas fa-utensils"></i> Menu</h1>
-    <p>Seleção de pratos preparados com cuidado e ingredientes frescos</p>
+    <p>Seleção de pratos com sabores aveludados</p>
 </section>
 
-<!-- VOLTAR -->
 <div style="text-align: center;">
-    <a href="index.html" class="btn-voltar">
-        <i class="fas fa-arrow-left"></i> Página Inicial
-    </a>
+    <a href="index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> Início</a>
 </div>
 
-<!-- MENU -->
 <div class="menu-container">
-
     <div class="destaque">
         <div>
             <h2><i class="fas fa-star"></i> Especialidades</h2>
-            <p>Os pratos mais apreciados da nossa casa</p>
+            <p>Os pratos mais apreciados da casa</p>
         </div>
         <span class="badge">84 pratos</span>
     </div>
@@ -343,11 +319,11 @@
     <div class="categoria">
         <h2><i class="fas fa-skewer"></i> Espetadas</h2>
         <div class="grid-pratos">
-            <div class="prato"><div class="icone">🦑</div><div class="info"><h3>Espetada de Lulas e Camarão</h3><p>arroz basmati, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🍗</div><div class="info"><h3>Espetada de Frango e Ananás</h3><p>arroz basmati, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Espetada de Porco Ibérico</h3><p>arroz basmati, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Espetada de Porco</h3><p>pimento, cebola, linguiça · arroz basmati, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Espetada de Novilho</h3><p>curgete, maçaroca de milho, ervas aromáticas · arroz basmati, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🦑</div><div class="info"><h3>Lulas e Camarão</h3><p>arroz basmati, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🍗</div><div class="info"><h3>Frango e Ananás</h3><p>arroz basmati, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Porco Ibérico</h3><p>arroz basmati, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Porco</h3><p>pimento, cebola, linguiça · arroz basmati, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Novilho</h3><p>curgete, maçaroca de milho, ervas · arroz basmati, batata frita</p></div></div>
         </div>
     </div>
 
@@ -355,14 +331,14 @@
     <div class="categoria">
         <h2><i class="fas fa-fire"></i> Grelhados</h2>
         <div class="grid-pratos">
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Picanha Grelhada</h3><p>arroz basmati, feijão preto, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Picanha</h3><p>arroz basmati, feijão preto, batata frita</p></div></div>
             <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Secretos de Porco Ibérico</h3><p>arroz basmati, batata frita</p></div></div>
             <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Lagartinhos</h3><p>arroz basmati, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Bife de Vazia Grelhado</h3><p>arroz basmati, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Entrecôte Grelhado</h3><p>arroz, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Costela de Novilho Grelhada</h3><p>arroz basmati, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>T-Bone Grelhado <span style="font-weight:300;color:#8a7a72;">2p</span></h3><p>pimenta padrão · arroz basmati, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Tomahawk Grelhado</h3><p>tomate cherry assado · arroz basmati, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Bife de Vazia</h3><p>arroz basmati, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Entrecôte</h3><p>arroz, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Costela de Novilho</h3><p>arroz basmati, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>T-Bone <span style="font-weight:300;color:#9a7a64;">2p</span></h3><p>pimenta padrão · arroz basmati, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Tomahawk</h3><p>tomate cherry assado · arroz basmati, batata frita</p></div></div>
         </div>
     </div>
 
@@ -370,43 +346,43 @@
     <div class="categoria">
         <h2><i class="fas fa-utensils"></i> Tábuas Mistas</h2>
         <div class="grid-pratos">
-            <div class="prato"><div class="icone">🧑‍🍳</div><div class="info"><h3>Tábua Mista <span class="destaque-tabua">2p</span></h3><p>picanha, secretos de porco ibérico, salsicha toscana, entremeada, chouriço de carne, frutos tropicais · arroz basmati, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🧑‍🍳</div><div class="info"><h3>Tábua de Porco Ibérico</h3><p>secretos de porco ibérico, lagartinhos, entremeada, salsicha toscana, alheira, frutos tropicais · arroz basmati, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🧑‍🍳</div><div class="info"><h3>Tábua ao Rio</h3><p>picanha, secretos de porco ibérico, entrecôte, salsicha toscana, alheira, camarão tigre, frutos tropicais · arroz basmati, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🧑‍🍳</div><div class="info"><h3>Tábua Vaqueiro <span class="destaque-tabua">2p</span></h3><p>entrecôte, picanha fatiada, fraldinha em tirinhas, salsicha toscana, tomate cherry assado com alecrim · risotto de legumes, gema</p></div></div>
+            <div class="prato"><div class="icone">🧑‍🍳</div><div class="info"><h3>Tábua Mista <span class="destaque-tabua">2p</span></h3><p>picanha, secretos, salsicha, entremeada, chouriço, frutos · arroz basmati, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🧑‍🍳</div><div class="info"><h3>Tábua de Porco Ibérico</h3><p>secretos, lagartinhos, entremeada, salsicha, alheira, frutos · arroz basmati, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🧑‍🍳</div><div class="info"><h3>Tábua ao Rio</h3><p>picanha, secretos, entrecôte, salsicha, alheira, camarão tigre, frutos · arroz basmati, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🧑‍🍳</div><div class="info"><h3>Tábua Vaqueiro <span class="destaque-tabua">2p</span></h3><p>entrecôte, picanha, fraldinha, salsicha, tomate cherry · risotto de legumes, gema</p></div></div>
         </div>
     </div>
 
     <!-- CARNE -->
     <div class="categoria">
-        <h2><i class="fas fa-drumstick-bite"></i> Pratos de Carne</h2>
+        <h2><i class="fas fa-drumstick-bite"></i> Carnes</h2>
         <div class="grid-pratos">
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Bife de Vazia com Molho Roquefort</h3><p>arroz basmati, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Bife de Vazia com Molho Três Pimentos</h3><p>arroz, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Bife de Vazia com Molho de Cogumelos</h3><p>arroz basmati, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Bife ao Rio</h3><p>presunto, ovo estrelado · arroz basmati, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Bife ao Cortador</h3><p>molho de fritura, ovo estrelado · risotto de legumes</p></div></div>
-            <div class="prato"><div class="icone">🐖</div><div class="info"><h3>Carne de Porco à Alentejana</h3><p>batata frita em cubos</p></div></div>
-            <div class="prato"><div class="icone">🐖</div><div class="info"><h3>Lombinhos de Porco de Cebolada</h3><p>puré de batata</p></div></div>
-            <div class="prato"><div class="icone">🐖</div><div class="info"><h3>Lombo de Porco Assado no Forno Simples</h3><p>arroz branco, batata assada</p></div></div>
-            <div class="prato"><div class="icone">🐖</div><div class="info"><h3>Lombo de Porco Recheado com Farinheira</h3><p>arroz branco, batata assada</p></div></div>
-            <div class="prato"><div class="icone">🐖</div><div class="info"><h3>Lombo de Porco Assado Recheado com Ameixa</h3><p>arroz branco, batata assada</p></div></div>
-            <div class="prato"><div class="icone">🐖</div><div class="info"><h3>Rolo de Carne Recheado</h3><p>ovo cozido / bacon e queijo / espinafres e cogumelos / alheira · arroz de cenoura, batata frita</p></div></div>
-            <div class="prato"><div class="icone">🦃</div><div class="info"><h3>Perna de Peru Recheada</h3><p>cenoura e espinafres / espinafres e cogumelos / linguiça e alheira · puré de batata doce</p></div></div>
-            <div class="prato"><div class="icone">🍗</div><div class="info"><h3>Perna de Frango Recheada com Farinheira</h3><p>arroz de legumes, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Bife de Vazia · Roquefort</h3><p>arroz basmati, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Bife de Vazia · 3 Pimentos</h3><p>arroz, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Bife de Vazia · Cogumelos</h3><p>arroz basmati, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Bife ao Rio</h3><p>presunto, ovo · arroz basmati, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Bife ao Cortador</h3><p>molho de fritura, ovo · risotto de legumes</p></div></div>
+            <div class="prato"><div class="icone">🐖</div><div class="info"><h3>Porco à Alentejana</h3><p>batata frita em cubos</p></div></div>
+            <div class="prato"><div class="icone">🐖</div><div class="info"><h3>Lombinhos de Porco</h3><p>cebolada · puré de batata</p></div></div>
+            <div class="prato"><div class="icone">🐖</div><div class="info"><h3>Lombo de Porco Assado</h3><p>arroz branco, batata assada</p></div></div>
+            <div class="prato"><div class="icone">🐖</div><div class="info"><h3>Lombo · Farinheira</h3><p>arroz branco, batata assada</p></div></div>
+            <div class="prato"><div class="icone">🐖</div><div class="info"><h3>Lombo · Ameixa</h3><p>arroz branco, batata assada</p></div></div>
+            <div class="prato"><div class="icone">🐖</div><div class="info"><h3>Rolo de Carne</h3><p>recheado · arroz de cenoura, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🦃</div><div class="info"><h3>Perna de Peru</h3><p>recheada · puré de batata doce</p></div></div>
+            <div class="prato"><div class="icone">🍗</div><div class="info"><h3>Perna de Frango</h3><p>farinheira · arroz de legumes, batata frita</p></div></div>
             <div class="prato"><div class="icone">🍗</div><div class="info"><h3>Pernil à Portuguesa</h3><p>batatinha assada</p></div></div>
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Bochechas de Porco Estufadas</h3><p>puré de batata</p></div></div>
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Entrecosto Assado no Forno</h3><p>migas alentejanas</p></div></div>
-            <div class="prato"><div class="icone">🦆</div><div class="info"><h3>Pato Assado no Forno</h3><p>laranja / ameixa · batata assada em gomas</p></div></div>
-            <div class="prato"><div class="icone">🦆</div><div class="info"><h3>Arroz de Pato à Moda Antiga</h3></div></div>
-            <div class="prato"><div class="icone">🐑</div><div class="info"><h3>Perna de Borrego Assada</h3><p>batata a padeiro</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Bochechas de Porco</h3><p>estufadas · puré de batata</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Entrecosto</h3><p>migas alentejanas</p></div></div>
+            <div class="prato"><div class="icone">🦆</div><div class="info"><h3>Pato Assado</h3><p>laranja / ameixa · batata assada</p></div></div>
+            <div class="prato"><div class="icone">🦆</div><div class="info"><h3>Arroz de Pato</h3><p>moda antiga</p></div></div>
+            <div class="prato"><div class="icone">🐑</div><div class="info"><h3>Perna de Borrego</h3><p>batata a padeiro</p></div></div>
             <div class="prato"><div class="icone">🐑</div><div class="info"><h3>Ensopado de Borrego</h3><p>pão torrado</p></div></div>
-            <div class="prato"><div class="icone">🐐</div><div class="info"><h3>Cabrito Assado no Forno</h3><p>batata a padeiro</p></div></div>
-            <div class="prato"><div class="icone">🍝</div><div class="info"><h3>Lasanha</h3><p>à bolonhesa / de frango / de requeijão e espinafres / de atum</p></div></div>
-            <div class="prato"><div class="icone">🍲</div><div class="info"><h3>Feijoada à Transmontana</h3></div></div>
-            <div class="prato"><div class="icone">🍞</div><div class="info"><h3>Francesinha à Moda do Porto</h3></div></div>
-            <div class="prato"><div class="icone">🍗</div><div class="info"><h3>Strogonoff de Frango</h3><p>cogumelos · arroz basmati</p></div></div>
-            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Strogonoff de Vazia</h3><p>arroz basmati</p></div></div>
+            <div class="prato"><div class="icone">🐐</div><div class="info"><h3>Cabrito Assado</h3><p>batata a padeiro</p></div></div>
+            <div class="prato"><div class="icone">🍝</div><div class="info"><h3>Lasanha</h3><p>bolonhesa / frango / requeijão / atum</p></div></div>
+            <div class="prato"><div class="icone">🍲</div><div class="info"><h3>Feijoada</h3><p>à Transmontana</p></div></div>
+            <div class="prato"><div class="icone">🍞</div><div class="info"><h3>Francesinha</h3><p>moda do Porto</p></div></div>
+            <div class="prato"><div class="icone">🍗</div><div class="info"><h3>Strogonoff Frango</h3><p>cogumelos · arroz basmati</p></div></div>
+            <div class="prato"><div class="icone">🥩</div><div class="info"><h3>Strogonoff Vazia</h3><p>arroz basmati</p></div></div>
             <div class="prato"><div class="icone">🍲</div><div class="info"><h3>Paella Espanhola</h3></div></div>
         </div>
     </div>
@@ -415,31 +391,31 @@
     <div class="categoria">
         <h2><i class="fas fa-fish"></i> Bacalhau</h2>
         <div class="grid-pratos">
-            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Lombo de Bacalhau com Broa</h3><p>cama de grelhados salteados, batata ao murro</p></div></div>
-            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Lombo de Bacalhau à Lagareiro</h3><p>batata ao murro, pimentos assados</p></div></div>
-            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Lombo de Bacalhau à Zé do Pipo</h3><p>puré de batata</p></div></div>
-            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Lombo de Bacalhau à Minhota</h3><p>cebolada, batata frita em rodelas, ovo cozido</p></div></div>
-            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Bacalhau com Natas e Camarão</h3></div></div>
+            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Lombo com Broa</h3><p>grelhados salteados, batata ao murro</p></div></div>
+            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Lombo à Lagareiro</h3><p>batata ao murro, pimentos assados</p></div></div>
+            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Lombo à Zé do Pipo</h3><p>puré de batata</p></div></div>
+            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Lombo à Minhota</h3><p>cebolada, batata frita, ovo</p></div></div>
+            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Bacalhau com Natas</h3><p>camarão</p></div></div>
             <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Bacalhau à Brás</h3></div></div>
             <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Bacalhau Espiritual</h3></div></div>
-            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Gratinado de Bacalhau</h3><p>batata em rodelas, espinafre</p></div></div>
+            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Gratinado</h3><p>batata, espinafre</p></div></div>
             <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Açorda de Bacalhau</h3></div></div>
         </div>
     </div>
 
     <!-- MARISCOS -->
     <div class="categoria">
-        <h2><i class="fas fa-shrimp"></i> Mariscos & Camarão</h2>
+        <h2><i class="fas fa-shrimp"></i> Mariscos</h2>
         <div class="grid-pratos">
             <div class="prato"><div class="icone">🦐</div><div class="info"><h3>Açorda de Camarão</h3></div></div>
-            <div class="prato"><div class="icone">🦐</div><div class="info"><h3>Risotto de Camarão Cremoso</h3></div></div>
+            <div class="prato"><div class="icone">🦐</div><div class="info"><h3>Risotto de Camarão</h3></div></div>
             <div class="prato"><div class="icone">🦐</div><div class="info"><h3>Linguini de Camarão</h3></div></div>
             <div class="prato"><div class="icone">🦐</div><div class="info"><h3>Caril de Gambás</h3><p>arroz basmati</p></div></div>
-            <div class="prato"><div class="icone">🦐</div><div class="info"><h3>Massa Nero com Marisco</h3></div></div>
-            <div class="prato"><div class="icone">🐙</div><div class="info"><h3>Polvo à Lagareiro</h3><p>grelos salteados, batata ao murro</p></div></div>
+            <div class="prato"><div class="icone">🦐</div><div class="info"><h3>Massa Nero</h3><p>com marisco</p></div></div>
+            <div class="prato"><div class="icone">🐙</div><div class="info"><h3>Polvo à Lagareiro</h3><p>grelos, batata ao murro</p></div></div>
             <div class="prato"><div class="icone">🐙</div><div class="info"><h3>Arroz de Polvo</h3></div></div>
-            <div class="prato"><div class="icone">🐙</div><div class="info"><h3>Feijoada de Choco</h3><p>feijão branco, acompanha arroz</p></div></div>
-            <div class="prato"><div class="icone">🐙</div><div class="info"><h3>Choco Frito à Moda de Setúbal</h3><p>molho de ervas, arroz branco, batata frita</p></div></div>
+            <div class="prato"><div class="icone">🐙</div><div class="info"><h3>Feijoada de Choco</h3><p>feijão branco, arroz</p></div></div>
+            <div class="prato"><div class="icone">🐙</div><div class="info"><h3>Choco Frito</h3><p>molho de ervas, arroz, batata frita</p></div></div>
         </div>
     </div>
 
@@ -450,9 +426,9 @@
             <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Risotto de Robalo</h3></div></div>
             <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Risotto de Salmão</h3></div></div>
             <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Tranche de Salmão</h3><p>molho de maracujá, puré de batata</p></div></div>
-            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Massa Fusilli Salteada</h3><p>espinafre, salmão</p></div></div>
-            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Lombinhos de Pescada com Broa</h3><p>batata saloia, cogumelos salteados</p></div></div>
-            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Salmão Grelhado ou Braseado</h3><p>batata cozida, legumes</p></div></div>
+            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Massa Fusilli</h3><p>espinafre, salmão</p></div></div>
+            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Lombinhos de Pescada</h3><p>broa, batata saloia, cogumelos</p></div></div>
+            <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Salmão Grelhado</h3><p>batata cozida, legumes</p></div></div>
             <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Dourada Grelhada</h3><p>migas, legumes salteados</p></div></div>
             <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Filetes de Robalo</h3><p>risotto de legumes</p></div></div>
             <div class="prato"><div class="icone">🐟</div><div class="info"><h3>Bife de Atum</h3><p>puré de batata</p></div></div>
@@ -479,17 +455,18 @@
         <div class="grid-pratos">
             <div class="prato prato-infantil"><div class="icone">🍗</div><div class="info"><h3>Nuggets de Frango</h3><p>esparguete</p></div></div>
             <div class="prato prato-infantil"><div class="icone">🍝</div><div class="info"><h3>Esparguete à Bolonhesa</h3></div></div>
-            <div class="prato prato-infantil"><div class="icone">🍔</div><div class="info"><h3>Hambúrguer com Tudo</h3></div></div>
+            <div class="prato prato-infantil"><div class="icone">🍔</div><div class="info"><h3>Hambúrguer</h3><p>com tudo</p></div></div>
             <div class="prato prato-infantil"><div class="icone">🍗</div><div class="info"><h3>Bifinhos de Frango</h3><p>cogumelos, arroz branco</p></div></div>
             <div class="prato prato-infantil"><div class="icone">🥩</div><div class="info"><h3>Bitoque</h3></div></div>
         </div>
     </div>
-
 </div>
 
-<!-- FOOTER -->
 <footer>
     <p>© 2026 · <span>Restaurante do Rio</span> · Feito com ♥</p>
+    <p style="font-size:12px; margin-top:4px;">
+        <a href="mailto:t.fesenko000@gmail.com">t.fesenko000@gmail.com</a>
+    </p>
 </footer>
 
 </body>
