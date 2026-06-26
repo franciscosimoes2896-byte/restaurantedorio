@@ -641,6 +641,42 @@
     </div>
 </section>
 
+<!-- NOVA SECÇÃO: PRATOS -->
+<section id="pratos">
+    <h2 class="section-title">Os Nossos Pratos</h2>
+    <p class="section-subtitle">Sabores caseiros com tradição</p>
+
+    <div class="sobre-texto">
+        <p>
+            O conforto da comida caseira, o sabor das receitas de sempre. Pratos confeccionados com ingredientes frescos, tradição e um toque de carinho, para que cada refeição seja um momento especial.
+        </p>
+    </div>
+
+    <div class="carousel-wrapper">
+        <div class="carousel-container" id="carouselPratos">
+            <div class="carousel-slides" id="carouselPratosSlides">
+                <div class="carousel-slide">
+                    <img src="https://i.ibb.co/HLhY3TqM/f3.jpg" alt="Prato Restaurante do Rio" loading="lazy" />
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://i.ibb.co/cKMdh0L0/f2.jpg" alt="Prato Restaurante do Rio" loading="lazy" />
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://i.ibb.co/DPkVV8Ln/f1.jpg" alt="Prato Restaurante do Rio" loading="lazy" />
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://i.ibb.co/RTDTb6ps/f.jpg" alt="Prato Restaurante do Rio" loading="lazy" />
+                </div>
+            </div>
+
+            <button class="carousel-btn prev" id="prevBtnPratos">‹</button>
+            <button class="carousel-btn next" id="nextBtnPratos">›</button>
+        </div>
+
+        <div class="carousel-dots" id="carouselDotsPratos"></div>
+    </div>
+</section>
+
 <!-- RESERVAS -->
 <section id="reserva">
     <h2 class="section-title">Reserva</h2>
@@ -769,8 +805,9 @@
     <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- CARROSSEL SCRIPT -->
+<!-- SCRIPTS -->
 <script>
+    // ========== CARROSSEL DA GALERIA ==========
     const slides = document.getElementById('carouselSlides');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
@@ -835,6 +872,73 @@
     });
     carousel.addEventListener('mouseleave', function() {
         autoPlayInterval = setInterval(nextSlide, 4000);
+    });
+
+    // ========== CARROSSEL DE PRATOS ==========
+    const slidesPratos = document.getElementById('carouselPratosSlides');
+    const prevBtnPratos = document.getElementById('prevBtnPratos');
+    const nextBtnPratos = document.getElementById('nextBtnPratos');
+    const dotsContainerPratos = document.getElementById('carouselDotsPratos');
+    const totalSlidesPratos = slidesPratos.children.length;
+    let currentIndexPratos = 0;
+    let autoPlayIntervalPratos;
+
+    for (let i = 0; i < totalSlidesPratos; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.dataset.index = i;
+        dot.addEventListener('click', function() {
+            goToSlidePratos(parseInt(this.dataset.index));
+        });
+        dotsContainerPratos.appendChild(dot);
+    }
+
+    const dotsPratos = dotsContainerPratos.children;
+
+    function updateCarouselPratos() {
+        slidesPratos.style.transform = 'translateX(-' + (currentIndexPratos * 100) + '%)';
+        for (let i = 0; i < dotsPratos.length; i++) {
+            dotsPratos[i].className = 'carousel-dot';
+            if (i === currentIndexPratos) {
+                dotsPratos[i].classList.add('active');
+            }
+        }
+    }
+
+    function goToSlidePratos(index) {
+        currentIndexPratos = index;
+        updateCarouselPratos();
+        resetAutoPlayPratos();
+    }
+
+    function nextSlidePratos() {
+        currentIndexPratos = (currentIndexPratos + 1) % totalSlidesPratos;
+        updateCarouselPratos();
+        resetAutoPlayPratos();
+    }
+
+    function prevSlidePratos() {
+        currentIndexPratos = (currentIndexPratos - 1 + totalSlidesPratos) % totalSlidesPratos;
+        updateCarouselPratos();
+        resetAutoPlayPratos();
+    }
+
+    function resetAutoPlayPratos() {
+        clearInterval(autoPlayIntervalPratos);
+        autoPlayIntervalPratos = setInterval(nextSlidePratos, 4000);
+    }
+
+    prevBtnPratos.addEventListener('click', prevSlidePratos);
+    nextBtnPratos.addEventListener('click', nextSlidePratos);
+
+    autoPlayIntervalPratos = setInterval(nextSlidePratos, 4000);
+
+    const carouselPratos = document.getElementById('carouselPratos');
+    carouselPratos.addEventListener('mouseenter', function() {
+        clearInterval(autoPlayIntervalPratos);
+    });
+    carouselPratos.addEventListener('mouseleave', function() {
+        autoPlayIntervalPratos = setInterval(nextSlidePratos, 4000);
     });
 </script>
 
