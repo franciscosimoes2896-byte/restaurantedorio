@@ -174,12 +174,12 @@
             line-height: 1.7;
         }
 
-        /* SALAS */
+        /* SALAS + ESTACIONAMENTO */
         .salas-info {
             text-align: center;
             margin: -4px auto 20px;
             padding: 5px 18px;
-            max-width: 380px;
+            max-width: 480px;
             background: #fff7f0;
             border: 1px solid #e8d9cc;
             border-radius: 50px;
@@ -196,6 +196,10 @@
         .salas-info span {
             font-weight: 600;
             color: #3d2c1e;
+        }
+
+        .salas-info .fa-parking {
+            color: #2e7d32;
         }
 
         /* CARROSSEL */
@@ -538,6 +542,13 @@
             .map-wrapper iframe {
                 height: 220px;
             }
+
+            .salas-info {
+                max-width: 100%;
+                font-size: 11px;
+                padding: 5px 12px;
+                border-radius: 30px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -550,8 +561,9 @@
             }
 
             .salas-info {
-                font-size: 11px;
-                padding: 4px 12px;
+                font-size: 10px;
+                padding: 4px 10px;
+                max-width: 100%;
             }
 
             .carousel-dot {
@@ -600,7 +612,7 @@
 
     <div class="sobre-texto">
         <p>
-            Há momentos que merecem ser celebrados à volta de uma boa mesa. Na Churrasqueira do Rio, recebemos cada evento com carinho, dedicação e o sabor da verdadeira cozinha portuguesa. Seja um aniversário, um batizado, uma comunhão, um jantar de família, um encontro entre amigos ou um evento empresarial, criamos um ambiente acolhedor onde cada refeição se transforma numa recordação especial. O aroma da brasa, os sabores tradicionais e a hospitalidade que nos caracteriza fazem de cada celebração um momento único, partilhado entre sorrisos, boa comida e pessoas especiais. Deixe-nos fazer parte da sua história. Entre em contacto connosco e descubra os nossos menus para grupos. Será um prazer celebrar consigo.
+            O Restaurante Churrasqueira do Rio está situado em frente ao Parque Zeca Afonso, junto ao rio. Depois da sua refeição, aproveite para dar um agradável passeio à beira-rio e tirar fotografias maravilhosas para guardar no seu álbum de recordações. Há momentos que merecem ser celebrados à volta de uma boa mesa. Na Churrasqueira do Rio, recebemos cada evento com carinho, dedicação e o sabor da verdadeira cozinha portuguesa. Seja um aniversário, um batizado, uma comunhão, um jantar de família, um encontro entre amigos ou um evento empresarial, criamos um ambiente acolhedor onde cada refeição se transforma numa recordação especial. O aroma da brasa, os sabores tradicionais e a hospitalidade que nos caracteriza fazem de cada celebração um momento único, partilhado entre sorrisos, boa comida e pessoas especiais. Deixe-nos fazer parte da sua história. Entre em contacto connosco e descubra os nossos menus para grupos. Será um prazer celebrar consigo.
         </p>
     </div>
 
@@ -608,6 +620,8 @@
         <i class="fas fa-door-open"></i>
         <span>2 salas</span> · até <span>24</span> <i class="fas fa-circle" style="font-size:3px; vertical-align:middle; opacity:0.25; margin:0 5px;"></i> até <span>60</span> pessoas
         <i class="fas fa-people-arrows" style="margin-left:4px;"></i>
+        <i class="fas fa-circle" style="font-size:3px; vertical-align:middle; opacity:0.25; margin:0 5px;"></i>
+        <i class="fas fa-parking"></i> Estacionamento gratuito
     </div>
 
     <div class="carousel-wrapper">
@@ -641,7 +655,7 @@
     </div>
 </section>
 
-<!-- NOVA SECÇÃO: PRATOS -->
+<!-- PRATOS -->
 <section id="pratos">
     <h2 class="section-title">Os Nossos Pratos</h2>
     <p class="section-subtitle">Sabores caseiros com tradição</p>
